@@ -301,64 +301,41 @@ export default function VehicleServiceForm() {
       )}
     </div>
   
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border border-gray-300 rounded-xl shadow-md">
-        <thead>
-          <tr className="bg-gray-100 text-gray-700 text-left">
-            <th className="py-2 px-4 border-b">Part Description</th>
-            <th className="py-2 px-4 border-b">Labour</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={index} className="hover:bg-gray-50 transition duration-150">
-              <td className="py-2 px-4 border-b">
-                <input
-                  type="text"
-                  value={item.description}
-                  onChange={(e) => handleChange(index, 'description', e.target.value)}
-                  className="border border-gray-300 rounded w-full p-1"
-                  placeholder="Enter part description"
-                />
-              </td>
-              <td className="py-2 px-4 border-b">
-                <input
-                  type="text"
-                  value={item.labour}
-                  onChange={(e) => handleChange(index, 'labour', e.target.value)}
-                  className="border border-gray-300 rounded w-full p-1"
-                  placeholder="Enter labour"
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="max-w-md mx-auto py-4">
-  <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
-  <div className="flex items-center justify-center md:justify-start">
-      <button
-        onClick={addRow}
-        className="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-150"
-      >
-        Add New Row
-      </button>
+    <div>
+  <h2 className="text-2xl font-bold">Labor Details</h2>
+  {data.map((item, index) => (
+    <div key={index} className="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Description</label>
+        <input
+          type="text"
+          value={item.description}
+          onChange={(e) => handleChange(index, 'description', e.target.value)}
+          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Labor</label>
+        <input
+          type="text"
+          value={item.labour}
+          onChange={(e) => handleChange(index, 'labour', e.target.value)}
+          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
     </div>
-    <div className="py-2 px-4">
-      <label htmlFor="carReg" className="block text-sm font-medium text-gray-700">Total</label>
-      <input
-        type="text"
-        id="carReg"
-        className="mt-1 block w-full border border-gray-300 py-2 px-3 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-        placeholder="Enter total"
-      />
-    </div>
-    
+  ))}
 
-  </div>
+  {/* Button to add a new row */}
+  <button
+    type="button"
+    onClick={addRow}
+    className="mt-4 bg-green-500 text-white px-4 py-2 rounded-md"
+  >
+    Add Row
+  </button>
 </div>
 
-    </div>
             
 
             {/* Signature Section */}
