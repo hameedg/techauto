@@ -1,11 +1,15 @@
 import React from 'react'
+import CommandInput from './components/CommandInput'
+import BotCommandInput from './components/BotCommandInput'
 import JobForm from './components/JobForm'
 
 const App = () => {
   return (
     <div>
-      <JobForm />
       {/* <p>hello</p> */}
+      <JobForm />
+      {/* <CommandInput /> */}
+      {/* <BotCommandInput /> */}
     </div>
   )
 }
